@@ -1,4 +1,4 @@
-package testla.screenplay.actor;
+package testla.screenplay.web;
 
 import org.jetbrains.annotations.Nullable;
 

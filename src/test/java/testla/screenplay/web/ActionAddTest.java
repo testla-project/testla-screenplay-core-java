@@ -1,4 +1,4 @@
-package testla.screenplay.actor;
+package testla.screenplay.web;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -7,6 +7,9 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.Response;
 import org.junit.jupiter.api.Test;
+import testla.screenplay.actor.Actor;
+import testla.screenplay.web.abilities.BrowseTheWeb;
+import testla.screenplay.web.actions.Add;
 
 /**
  * TODO: Add Description

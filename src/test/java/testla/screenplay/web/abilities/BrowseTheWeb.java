@@ -1,4 +1,4 @@
-package testla.screenplay.actor;
+package testla.screenplay.web.abilities;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.DragToOptions;
@@ -16,6 +16,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import testla.screenplay.ability.Ability;
+import testla.screenplay.actor.Actor;
+import testla.screenplay.actor.IActor;
+import testla.screenplay.web.SelectorOptions;
+import testla.screenplay.web.Utils;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 /**
@@ -27,18 +31,20 @@ public class BrowseTheWeb extends Ability {
 
     private final Page page;
     private static final Utils utils = new Utils();
+    private static BrowseTheWeb instance;
+
     private BrowseTheWeb(Page page) {
         super();
         this.page = page;
     }
 
     public static BrowseTheWeb using(Page page) {
-
-        return new BrowseTheWeb(page);
+        BrowseTheWeb.instance = new BrowseTheWeb(page);
+        return BrowseTheWeb.instance;
     }
 
-    public BrowseTheWeb as(Actor actor) {
-        return (BrowseTheWeb) actor.withAbilityTo(this);
+    public static BrowseTheWeb as(IActor actor) {
+        return (BrowseTheWeb) actor.withAbilityTo(BrowseTheWeb.instance);
     }
 
     public Page getPage() {

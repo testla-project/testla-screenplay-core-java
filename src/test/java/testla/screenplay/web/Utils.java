@@ -1,4 +1,4 @@
-package testla.screenplay.actor;
+package testla.screenplay.web;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.WaitForOptions;

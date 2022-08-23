@@ -1,6 +1,5 @@
-package testla.screenplay.actor;
+package testla.screenplay.web;
 
-import com.microsoft.playwright.Page.LocatorOptions;
 import org.jetbrains.annotations.Nullable;
 
 /**

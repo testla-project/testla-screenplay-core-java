@@ -8,7 +8,7 @@ import testla.screenplay.actor.IActor;
  * @author Patrick Doering
  */
 // ToDo: Why is this class not abstract?
-public class Ability implements IAbility {
+public abstract class Ability implements IAbility {
 
     @Override
     public String name() {
@@ -16,7 +16,7 @@ public class Ability implements IAbility {
     }
 
     // ToDo: Do we really need this? In JS this Method is static...
-    public IAbility as(IActor actor) {
-        return actor.withAbilityTo(this);
-    }
+    // public IAbility as(IActor actor) {
+       // return actor.withAbilityTo(this);
+   //  }
 }
