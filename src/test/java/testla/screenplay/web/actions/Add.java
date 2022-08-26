@@ -14,15 +14,19 @@ import java.util.List;
  */
 public class Add extends Action {
 
-  private List<Cookie> cookies;
+  private final List<Cookie> cookies;
 
   private Add(List<Cookie> cookies) {
       this.cookies = cookies;
   }
 
+  public static Add cookies(List<Cookie> cookies) {
+      return new Add(cookies);
+  }
+
   @Override
   public Object performAs(IActor actor) {
-      BrowseTheWeb.as(actor).addCookies(cookies);
+      BrowseTheWeb.as(actor).addCookies(this.cookies);
       return null;
   }
 }
