@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import testla.screenplay.actor.Actor;
 import testla.screenplay.web.abilities.BrowseTheWeb;
 import testla.screenplay.web.actions.Add;
+import testla.screenplay.web.actions.Clear;
 
 /**
  * TODO: Add Description
@@ -18,27 +19,16 @@ import testla.screenplay.web.actions.Add;
  */
 class ActionAddTest {
 
-    private Add add = new Add();
-    private final Actor myActor = Actor.named("Actor");
-
     @Test
-    void testAddAction() {
-
-        boolean bResult = (boolean) myActor.attemptsTo(add);
-        assertTrue(bResult);
-
-    }
-
-    @Test
-    void BrowseTheWeb_Navigate() {
+    void Test_General() {
         Browser browser = Playwright.create().chromium().launch();
         Page page = browser.newPage();
 
-        Response resp = BrowseTheWeb.using(page).navigate("http://playwright.dev");
+        Actor myActor = Actor.named("Actor").can(BrowseTheWeb.using(page));
 
-        assertTrue(resp.ok());
-
-        System.out.println(resp.text());
+        myActor.attemptsTo(
+                Clear.cookies()
+        );
     }
 
 }

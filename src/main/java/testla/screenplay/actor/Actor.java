@@ -45,7 +45,7 @@ public class Actor implements IActor {
 
     @Override
     public IAbility withAbilityTo(IAbility ability) {
-        if (!this.abilityMap.containsKey(ability.name())) {
+        if (ability == null || !this.abilityMap.containsKey(ability.name())) {
             throw new RuntimeException("Error: This Actor does not have this ability!");
         }
         return this.abilityMap.get(ability.name());

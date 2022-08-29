@@ -5,32 +5,27 @@ import testla.screenplay.actor.IActor;
 import testla.screenplay.web.SelectorOptions;
 import testla.screenplay.web.abilities.BrowseTheWeb;
 
-/**
- * TODO: Add Description
- *
- * @author Patrick Döring
- */
-public class Check extends Action {
+public class Click extends Action {
 
     private final String selector;
     private final SelectorOptions options;
 
-    private Check(String selector) {
+    private Click(String selector) {
         this.selector = selector;
         this.options = null;
     }
 
-    private Check(String selector, SelectorOptions options) {
+    private Click(String selector, SelectorOptions options) {
         this.selector = selector;
         this.options = options;
     }
 
-    public static Check element(String selector) {
-        return new Check(selector);
+    public static Click on(String selector) {
+        return new Click(selector);
     }
 
-    public static Check element(String selector, SelectorOptions options) {
-        return new Check(selector, options);
+    public static Click on(String selector, SelectorOptions options) {
+        return new Click(selector, options);
     }
     @Override
     public Object performAs(IActor actor) {
