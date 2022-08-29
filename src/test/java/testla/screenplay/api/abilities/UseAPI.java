@@ -66,6 +66,7 @@ public class UseAPI extends Ability {
             case NONE -> {
                 resBody = null;
             }
+            // case JSON -> no res.json() ?
             default -> resBody = res.text();
         }
 
