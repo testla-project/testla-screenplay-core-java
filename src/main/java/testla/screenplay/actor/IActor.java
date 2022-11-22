@@ -19,7 +19,7 @@ public interface IActor {
     IActor with(String key, Object value);
     Object states(String key);
 
-    <T> T asks(IQuestion<T> question, T activityResult);
+    <T> T asks(IQuestion<T> question);
     IAbility withAbilityTo(IAbility ability);
     IActor can(IAbility... abilities);
 

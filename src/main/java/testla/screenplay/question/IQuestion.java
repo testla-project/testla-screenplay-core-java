@@ -8,6 +8,5 @@ import testla.screenplay.actor.IActor;
  * @author Patrick Doering
  */
 public interface IQuestion<T> {
-
     T answeredBy(IActor actor);
 }
