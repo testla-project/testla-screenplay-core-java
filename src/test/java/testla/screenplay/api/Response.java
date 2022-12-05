@@ -1,6 +1,5 @@
 package testla.screenplay.api;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Response {

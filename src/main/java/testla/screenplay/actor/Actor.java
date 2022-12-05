@@ -39,7 +39,7 @@ public class Actor implements IActor {
     }
 
     @Override
-    public <T> T asks(IQuestion<T> question, T activityResult) {
+    public <T> T asks(IQuestion<T> question) {
         return question.answeredBy(this);
     }
 
