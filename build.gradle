@@ -3,7 +3,10 @@ plugins {
     id 'maven-publish'
 }
 
-group 'testla.screenshot'
+group 'testla.screenplay'
+
+sourceCompatibility = 1.17
+targetCompatibility = 1.17
 
 repositories {
     mavenCentral()
@@ -13,10 +16,26 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testImplementation 'org.jetbrains:annotations:20.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    testImplementation 'com.microsoft.playwright:playwright:1.25.0'
 }
 
 test {
     useJUnitPlatform()
 }
 
+java {
+    withSourcesJar()
+    //withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
+}
