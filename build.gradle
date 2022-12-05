@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group 'testla.screenplay'
+group 'testla.screenplay-core'
 
 sourceCompatibility = 1.17
 targetCompatibility = 1.17
