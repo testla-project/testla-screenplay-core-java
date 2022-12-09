@@ -6,5 +6,10 @@ package testla.screenplay.ability;
  * @author Patrick Doering
  */
 public interface IAbility {
+    /**
+     * Return the name of this Ability.
+     *
+     * @return the name of this class.
+     */
     String name();
 }
