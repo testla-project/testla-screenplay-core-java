@@ -1,7 +1,7 @@
 package testla.screenplay.ability;
 
 /**
- * TODO: Add Description
+ * Abilities enable tasks/actions to perform specific requirements.
  *
  * @author Patrick Doering
  */
